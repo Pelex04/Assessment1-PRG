@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
- <div class="output">
+ <div id="output">
 
  </div>
 </body>
@@ -135,14 +135,26 @@
     releaseDate: "2023-09-30"
   }
 ]
-    let thing = document.createElement("h1");
-    let thing2 = document.createElement("p");
+ 
+       
+        products.forEach(function(todo) {
+          
+            const h1 = document.createElement('h1');
+            const p = document.createElement('p')
 
-    thing.textContent = products.name;
-    things.textContent = products.price;
+            
+       
+            
+          
+            h1.textContent = todo.name;
+            p.textContent = todo.price;
 
-    document.getElementById("output").appendChild(thing);
-     document.getElementById("output").appendChild(thing2);
+
+            
+            
+            document.getElementById('output').appendChild(h1);
+            document.getElementById('output').appendChild(p);
+        });
 
 
 </script>
