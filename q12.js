@@ -105,5 +105,8 @@ products.forEach(function(pro){
     console.log(pro.name + " "+ pro.price);
 })
 
-let array = products.filter(stock => stock=="Electronics")
+let array = products.filter(stock => stock.category=="Electronics")
+let array2 = products.filter(stock => stock.inStock=="true")
+
 console.log(array)
+console.log(array2);

@@ -32,34 +32,44 @@
     </div>
 </body>
 <script>
+    //this is the robots implemetation an update to question 14 //
    
  
     let color = document.getElementById("one");
+    let color2 = document.getElementById("two");
+    let color3 = document.getElementById("three");
 
     let currentState = "red";
-   const turnThemOff = () =>{
-         color.style.backgroundColor = "white";
-    }
 
+    const turnThemOff = () => {
+        color.style.backgroundColor = "white";
+        
+        color2.style.backgroundColor = "white";
+        
+        color3.style.backgroundColor = "white";
+    }
 
     const robotStart = ()=>{
         turnThemOff();
         if(currentState=="red"){
             
-            color.style.backgroundColor = "red";
-            currentState= "white"
-            setTimeout(robotStart,2000);
+             color.style.backgroundColor = "red";
+            currentState ="yellow";
+            setTimeout(robotStart,5000);
         }
-        else if(currentState=="white"){
+        else if(currentState=="yellow"){
+            color2.style.backgroundColor = "yellow";
+            currentState = "green";
+            setTimeout(robotStart,1000);
 
-              color.style.backgroundColor = "white";
-            currentState= "red"
-            setTimeout(robotStart,2000);
         }
-       
+        else if(currentState=="green"){
+                color3.style.backgroundColor = "green";
+            currentState = "red";
 
-    
-}
+            setTimeout(robotStart,10000);
+        }
+    }
     robotStart();
 
 
